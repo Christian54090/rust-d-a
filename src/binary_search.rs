@@ -24,15 +24,15 @@ pub fn binary_search(vec:Vec<i32>, elem:i32) -> bool {
 mod test {
     use super::binary_search;
 
-    #[test]
-    fn is_true() {
-        let vec = vec![1,3,4,5,13,20,25,40,42,44,53];
-        assert_eq!(true, binary_search(vec, 5));
-    }
+//    #[test]
+//    fn is_true() {
+//        let vec = vec![1,3,4,5,13,20,25,40,42,44,53];
+//        assert_eq!(true, binary_search(vec, 5));
+//    }
 
-    #[test]
-    fn is_false() {
-        let vec = vec![1,3,4,5,13,20,25,40,42,44,53];
-        assert_eq!(false, binary_search(vec, 43));
-    }
+//    #[test]
+//    fn is_false() {
+//        let vec = vec![1,3,4,5,13,20,25,40,42,44,53];
+//        assert_eq!(false, binary_search(vec, 43));
+//    }
 }
