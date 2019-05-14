@@ -10,23 +10,35 @@ struct Node<T> {
 }
 
 impl<T> List<T> {
-    fn new() -> List<T> {
+    pub fn new() -> Self {
         List { head: None }
     }
 
-    fn push(&mut self, elem: T) {
+    pub fn push(&mut self, elem: T) {
         // create new Box<Node>, set next to old head
+        let new_node = Box::new(Node {
+            elem,
+            next: self.head.take(),
+        });
+
         // set head to new node
+        self.head = Some(new_node);
     }
 
-    fn pop(&mut self) -> Option<T> {
+    pub fn pop(&mut self) -> Option<T> {
         // set head to old head's next
+        self.head.take().map(|node| {
+            self.head = node.next;
+            node.elem
+        })
         // return old head
     }
 }
 
 #[cfg(test)]
 mod test {
+    use super::List;
+
     #[test]
     fn push_and_pop() {
         let mut list = List::new();
