@@ -22,7 +22,7 @@ pub fn binary_search(vec:Vec<i32>, elem:i32) -> bool {
 
 #[cfg(test)]
 mod test {
-    use super::binary_search;
+//    use super::binary_search;
 
 //    #[test]
 //    fn is_true() {
