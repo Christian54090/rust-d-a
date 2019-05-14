@@ -30,6 +30,7 @@ mod test {
         assert_eq!(true, binary_search(vec, 5));
     }
 
+    #[test]
     fn is_false() {
         let vec = vec![1,3,4,5,13,20,25,40,42,44,53];
         assert_eq!(false, binary_search(vec, 43));
