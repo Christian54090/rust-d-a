@@ -24,3 +24,25 @@ impl<T> List<T> {
         // return old head
     }
 }
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn push_and_pop() {
+        let mut list = List::new();
+
+        list.push(1); list.push(2); list.push(3);
+
+        // Check removal
+        assert_eq!(list.pop(), Some(3));
+        assert_eq!(list.pop(), Some(2));
+
+        list.push(4); list.push(5);
+
+        // Check exhaustion
+        assert_eq!(list.pop(), Some(5));
+        assert_eq!(list.pop(), Some(4));
+        assert_eq!(list.pop(), Some(1));
+        assert_eq!(list.pop(), None);
+    }
+}
