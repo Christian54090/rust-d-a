@@ -1,7 +1,4 @@
 pub fn insertion_sort(mut arr: [i32; 6]) -> [i32; 6] {
-    // map over arr
-    // compare each item of arr to items on its left
-    // insert item in correct spot
     for i in 0..6 {
         let mut j = i;
         while j > 0 && arr[j-1] > arr[j] {
