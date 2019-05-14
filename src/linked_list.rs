@@ -15,23 +15,19 @@ impl<T> List<T> {
     }
 
     pub fn push(&mut self, elem: T) {
-        // create new Box<Node>, set next to old head
         let new_node = Box::new(Node {
             elem,
             next: self.head.take(),
         });
 
-        // set head to new node
         self.head = Some(new_node);
     }
 
     pub fn pop(&mut self) -> Option<T> {
-        // set head to old head's next
         self.head.take().map(|node| {
             self.head = node.next;
             node.elem
         })
-        // return old head
     }
 }
 
