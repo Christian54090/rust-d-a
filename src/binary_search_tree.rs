@@ -17,7 +17,7 @@ impl Tree {
         }
     }
 
-    pub fn insert(self, data: i32) {
+    pub fn insert(self, data: i32) -> Tree {
         let new_node = Box::new(Node {
             data,
             left: None,
@@ -36,6 +36,7 @@ impl Tree {
             }
             node.left = Some(new_node);
         }
+        Tree { head: self.head }
     }
 }
 
